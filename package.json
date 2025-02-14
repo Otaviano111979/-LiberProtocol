@@ -1,0 +1,17 @@
+{
+  "name": "liber-protocol",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "hardhat test",
+    "dev": "vite",
+    "deploy": "hardhat run scripts/deploy.js --network sepolia"
+  },
+  "dependencies": {
+    "ethers": "^6.10.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.19.0"
+  }
+}

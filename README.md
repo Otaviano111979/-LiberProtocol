@@ -106,4 +106,40 @@ LiberProtocol addresses these challenges through:
             ▼  
 ┌──────────────────────┐  
 │   XMTP (Messaging)   │  
-└──────────────────────┘  
+└──────────────────────┘
+Structure
+LiberProtocol/  
+├── contracts/                   # Smart Contracts (Solidity)  
+│   ├── LiberProfile.sol         # Contrato de perfis NFT  
+│   └── LiberDAO.sol             # Contrato de governança DAO  
+├── frontend/                    # Interface do usuário (React)  
+│   ├── public/  
+│   │   ├── index.html           # Template HTML  
+│   │   └── favicon.ico          # Ícone do projeto  
+│   ├── src/  
+│   │   ├── components/          # Componentes React  
+│   │   │   └── MintDomain.jsx   # Componente de mintar domínio  
+│   │   ├── lib/                 # Lógica de integração  
+│   │   │   ├── web3.js          # Conexão com Ethereum  
+│   │   │   └── ipfs.js          # Upload para IPFS  
+│   │   ├── App.jsx              # Componente principal  
+│   │   └── main.jsx             # Ponto de entrada  
+│   ├── package.json             # Dependências do frontend  
+│   └── vite.config.js           # Configuração do Vite  
+├── scripts/                     # Scripts de automação  
+│   └── deploy.js                # Deploy de contratos  
+├── tests/                       # Testes automatizados  
+│   ├── LiberProfile.test.js     # Testes do contrato de perfis  
+│   └── LiberDAO.test.js         # Testes do contrato DAO  
+├── docs/                        # Documentação  
+│   ├── architecture.md          # Diagramas técnicos  
+│   └── CONTRIBUTING.md          # Guia para contribuidores  
+├── .github/                     # Configurações do GitHub  
+│   ├── workflows/               # CI/CD (ex: GitHub Actions)  
+│   │   └── tests.yml            # Pipeline de testes  
+│   └── ISSUE_TEMPLATE.md        # Template para issues  
+├── .gitignore                   # Arquivos ignorados pelo Git  
+├── hardhat.config.js            # Configuração do Hardhat  
+├── package.json                 # Dependências globais  
+├── README.md                    # Documentação principal  
+└── LICENSE                      # Licença MIT  

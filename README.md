@@ -39,81 +39,71 @@
 1. Clone the repository:  
    ```bash  
    git clone https://github.com/Otaviano111979/LiberProtocol.git  
-   cd LiberProtocol
+   cd LiberProtocol  
 
-   Install dependencies:
+# LiberProtocol: Decentralized Social Network  
+**Project Documentation**  
 
-bash
-Copy
-npm install  
-Configure environment variables:
-Create a .env file in the root directory:
+---
 
-env
-Copy
-RPC_URL="https://polygon-rpc.com"  
-PRIVATE_KEY=your_testnet_key_here  # Use testnet keys only!  
-Start the development server:
+## Table of Contents  
+1. [Executive Summary](#1-executive-summary)  
+2. [Problem Statement](#2-problem-statement)  
+3. [Solution Overview](#3-solution-overview)  
+4. [Technical Architecture](#4-technical-architecture)  
+5. [Features](#5-features)  
+6. [Use Cases](#6-use-cases)  
+7. [Roadmap](#7-roadmap)  
+8. [Business Model](#8-business-model)  
+9. [Risks and Mitigation](#9-risks-and-mitigation)  
+10. [Team](#10-team)  
+11. [Call to Action](#11-call-to-action)  
+12. [Appendices](#12-appendices)  
 
-bash
-Copy
-npm run dev  
-🛠 Usage
-Mint Your NFT Domain
-Connect your wallet (e.g., MetaMask).
+---
 
-Navigate to /mint and claim your domain (e.g., alice.eth).
+## 1. Executive Summary  
+**LiberProtocol** is a decentralized social network built on blockchain technology, designed to empower users with full ownership of their digital identity and content. By leveraging **NFT domains** (e.g., `.eth`, `.crypto`), decentralized storage (IPFS, Arweave), and community governance (DAO), LiberProtocol aims to redefine social media as a user-owned, censorship-resistant ecosystem.  
 
-Confirm the transaction—your decentralized identity is now live!
+**Key Innovations**:  
+- Self-sovereign identity via NFT domains.  
+- Content permanence through decentralized storage.  
+- Tokenized governance ($LIBER token).  
+- Interoperability with Web3 applications.  
 
-Create a Post
-javascript
-Copy
-// Example: Publish a post to IPFS  
-import { uploadToIPFS } from './lib/storage';  
+---
 
-const post = {   
-  content: "Decentralized social media is the future!",  
-  author: "alice.eth",  
-  timestamp: Date.now()  
-};  
+## 2. Problem Statement  
+### Centralized Social Media Challenges:  
+- **Data Ownership**: Platforms monetize user data without sharing profits.  
+- **Censorship**: Content removal based on opaque policies.  
+- **Fragmentation**: Profiles and followers are locked to specific platforms.  
+- **Security Risks**: Centralized servers are prone to breaches.  
 
-const cid = await uploadToIPFS(post);  
-console.log(`Post CID: ${cid}`);  
-🤝 Contributing
-We welcome developers, designers, and Web3 enthusiasts! To contribute:
+---
 
-Fork the repository.
+## 3. Solution Overview  
+LiberProtocol addresses these challenges through:  
+- **NFT-Based Identity**: Users own their profiles as transferable NFT domains.  
+- **Decentralized Storage**: Content is stored on IPFS/Arweave, ensuring immutability.  
+- **DAO Governance**: Community-driven moderation and platform upgrades.  
+- **Web3 Integration**: Direct interaction with wallets, NFTs, and dApps.  
 
-Create a feature branch:
+---
 
-bash
-Copy
-git checkout -b feature/your-feature  
-Commit your changes:
-
-bash
-Copy
-git commit -m "feat: add your feature"  
-Push to the branch:
-
-bash
-Copy
-git push origin feature/your-feature  
-Open a Pull Request with a clear description.
-
-Read our Contribution Guidelines for details.
-
-📜 License
-Distributed under the MIT License. See LICENSE for details.
-
-
-GitHub Issues: Report bugs or suggest features
-
-🙌 Acknowledgments
-Inspired by Lens Protocol and Farcaster.
-
-Built with support from IPFS and The Graph.
-
-🌍 Let’s redefine social media—decentralized, open, and user-owned.
-
+## 4. Technical Architecture  
+### System Diagram  
+```plaintext
+┌──────────────────────┐       ┌──────────────────────┐  
+│   Frontend (React)   │ ↔️ │   Smart Contracts     │  
+└──────────────────────┘       └──────────────────────┘  
+            │                            │  
+            ▼                            ▼  
+┌──────────────────────┐       ┌──────────────────────┐  
+│   IPFS/Arweave       │ ↔️ │   The Graph (Indexing) │  
+└──────────────────────┘       └──────────────────────┘  
+            │  
+            ▼  
+┌──────────────────────┐  
+│   XMTP (Messaging)   │  
+└──────────────────────┘  

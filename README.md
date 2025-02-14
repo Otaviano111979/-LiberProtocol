@@ -107,39 +107,125 @@ LiberProtocol addresses these challenges through:
 ┌──────────────────────┐  
 │   XMTP (Messaging)   │  
 └──────────────────────┘
-Structure
+Complete Directory Structure
 LiberProtocol/  
 ├── contracts/                   # Smart Contracts (Solidity)  
-│   ├── LiberProfile.sol         # Contrato de perfis NFT  
-│   └── LiberDAO.sol             # Contrato de governança DAO  
-├── frontend/                    # Interface do usuário (React)  
+│   ├── LiberProfile.sol         # NFT Profile Contract  
+│   └── LiberDAO.sol             # DAO Governance Contract  
+├── frontend/                    # User Interface (React)  
 │   ├── public/  
-│   │   ├── index.html           # Template HTML  
-│   │   └── favicon.ico          # Ícone do projeto  
+│   │   ├── index.html           # HTML Template  
+│   │   └── favicon.ico          # Project Icon  
 │   ├── src/  
-│   │   ├── components/          # Componentes React  
-│   │   │   └── MintDomain.jsx   # Componente de mintar domínio  
-│   │   ├── lib/                 # Lógica de integração  
-│   │   │   ├── web3.js          # Conexão com Ethereum  
-│   │   │   └── ipfs.js          # Upload para IPFS  
-│   │   ├── App.jsx              # Componente principal  
-│   │   └── main.jsx             # Ponto de entrada  
-│   ├── package.json             # Dependências do frontend  
-│   └── vite.config.js           # Configuração do Vite  
-├── scripts/                     # Scripts de automação  
-│   └── deploy.js                # Deploy de contratos  
-├── tests/                       # Testes automatizados  
-│   ├── LiberProfile.test.js     # Testes do contrato de perfis  
-│   └── LiberDAO.test.js         # Testes do contrato DAO  
-├── docs/                        # Documentação  
-│   ├── architecture.md          # Diagramas técnicos  
-│   └── CONTRIBUTING.md          # Guia para contribuidores  
-├── .github/                     # Configurações do GitHub  
-│   ├── workflows/               # CI/CD (ex: GitHub Actions)  
-│   │   └── tests.yml            # Pipeline de testes  
-│   └── ISSUE_TEMPLATE.md        # Template para issues  
-├── .gitignore                   # Arquivos ignorados pelo Git  
-├── hardhat.config.js            # Configuração do Hardhat  
-├── package.json                 # Dependências globais  
-├── README.md                    # Documentação principal  
-└── LICENSE                      # Licença MIT  
+│   │   ├── components/          # React Components  
+│   │   │   └── MintDomain.jsx   # Domain Minting Component  
+│   │   ├── lib/                 # Integration Logic  
+│   │   │   ├── web3.js          # Ethereum Connection  
+│   │   │   └── ipfs.js          # IPFS Upload  
+│   │   ├── App.jsx              # Main Component  
+│   │   └── main.jsx             # Entry Point  
+│   ├── package.json             # Frontend Dependencies  
+│   └── vite.config.js           # Vite Configuration  
+├── scripts/                     # Automation Scripts  
+│   └── deploy.js                # Contract Deployment  
+├── tests/                       # Automated Tests  
+│   ├── LiberProfile.test.js     # Profile Contract Tests  
+│   └── LiberDAO.test.js         # DAO Contract Tests  
+├── docs/                        # Documentation  
+│   ├── architecture.md          # Technical Diagrams  
+│   └── CONTRIBUTING.md          # Contributor Guide  
+├── .github/                     # GitHub Configurations  
+│   ├── workflows/               # CI/CD (e.g., GitHub Actions)  
+│   │   └── tests.yml            # Test Pipeline  
+│   └── ISSUE_TEMPLATE.md        # Issue Template  
+├── .gitignore                   # Git-Ignored Files  
+├── hardhat.config.js            # Hardhat Configuration  
+├── package.json                 # Global Dependencies  
+├── README.md                    # Main Documentation  
+└── LICENSE                      # MIT License
+
+Structure Explanation
+contracts/:
+
+Contains Solidity smart contracts.
+
+Example: LiberProfile.sol (NFT domain minting) and LiberDAO.sol (governance).
+
+frontend/:
+
+React-based user interface.
+
+Wallet integration (e.g., MetaMask) via ethers.js.
+
+scripts/:
+
+Scripts for deploying contracts to testnets/mainnets.
+
+tests/:
+
+Automated tests for contracts (using Hardhat + Chai).
+
+docs/:
+
+Technical documentation and contributor guidelines.
+
+.github/:
+
+CI/CD configurations and issue/pull request templates.
+
+How to Create the Structure
+Run these commands in the terminal:
+# Create main directories  
+mkdir -p LiberProtocol/{contracts,frontend/src/{components,lib},scripts,tests,docs,.github/workflows}  
+
+# Create essential files  
+touch LiberProtocol/contracts/LiberProfile.sol  
+touch LiberProtocol/frontend/src/App.jsx  
+touch LiberProtocol/README.md  
+touch LiberProtocol/.gitignore
+
+Example .gitignore Content
+# Dependencies  
+node_modules/  
+
+# Keys and environment variables  
+.env  
+*.pem  
+
+# Logs and temporary files  
+*.log  
+.DS_Store  
+
+# Build artifacts  
+dist/  
+build/  
+artifacts/  
+cache/
+
+Best Practices
+Security:
+
+Never commit sensitive files (e.g., .env, private keys).
+
+Documentation:
+
+Keep README.md updated with clear setup and usage instructions.
+
+Versioning:
+
+Use semantic tags (e.g., v1.0.0) for releases.
+
+Next Steps
+Add the provided code to their respective files.
+
+Make the first commit:
+cd LiberProtocol  
+git init  
+git add .  
+git commit -m "Initial commit: Project structure"
+
+Link to the GitHub remote repository:
+git remote add origin https://github.com/Otaviano111979/LiberProtocol.git  
+git push -u origin main
+
+This structure is scalable and ready to evolve with new features (e.g., IPFS integration, DAO governance).
